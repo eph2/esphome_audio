@@ -139,4 +139,4 @@ def audio_config(config):
     return {
         "max_channels": 2
     }
-audio.final_validate_audio_schema(ADF_PIPELINE_ELEMENT_SCHEMA, audio_config)
+audio.final_validate_audio_schema(ADF_PIPELINE_ELEMENT_SCHEMA)
