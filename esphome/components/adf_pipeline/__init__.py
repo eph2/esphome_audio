@@ -81,6 +81,13 @@ ADF_PIPELINE_ELEMENT_SCHEMA = cv.Schema({
     cv.Optional("max_channels", default=2): cv.int_,
 })
 
+def audio_config(config):
+    return {
+        "max_channels": 2
+    }
+
+audio.final_validate_audio_schema(ADF_PIPELINE_ELEMENT_SCHEMA, audio_device=audio_config)
+
 element_classes = {
     "resampler": esp_adf_ns.class_(
         "ADFResampler", ADFPipelineProcess, ADFPipelineElement
@@ -137,8 +144,3 @@ async def to_code(config):
             "tone_partition",
         ],
     )
-def audio_config(config):
-    return {
-        "max_channels": 2
-    }
-audio.final_validate_audio_schema(ADF_PIPELINE_ELEMENT_SCHEMA, audio_device=audio_config)
