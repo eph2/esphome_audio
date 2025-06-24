@@ -77,7 +77,9 @@ async def setup_pipeline_controller(cntrl, config: dict) -> None:
 
 # Pipeline Elements
 
-ADF_PIPELINE_ELEMENT_SCHEMA = cv.Schema({})
+ADF_PIPELINE_ELEMENT_SCHEMA = cv.Schema({
+    cv.Optional("max_channels", default=2): cv.int_,
+})
 
 element_classes = {
     "resampler": esp_adf_ns.class_(
