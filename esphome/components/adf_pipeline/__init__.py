@@ -5,9 +5,11 @@ import os
 import esphome.codegen as cg
 from esphome.components.esp32 import add_idf_component
 from esphome.components import esp32
+from esphome.components import audio
 import esphome.config_validation as cv
 from esphome.const import CONF_ID
 from esphome.core import coroutine_with_priority, ID
+
 
 
 CODEOWNERS = ["@gnumpi"]
